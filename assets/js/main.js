@@ -44,9 +44,26 @@ function squareGenerator (maxSquare, squarePlace) {
 
 };
 
+//Stampo i calcoli
+let conto = 0;
+
+for (conto = 0; conto < conto.length; i++) {
+
+    numberGenerator(1, 64);
+    console.log(conto);
+};
+
+
 //Creo la funzione di reset DOM
 function squareRemover () {
 
     squareDiv.classList.add("none");
+
+};
+
+//Creo la funzione di calcolo
+function numberGenerator(min, max) {
+
+    return Math.floor(Math.random() * (max - min)) + min;
 
 };
