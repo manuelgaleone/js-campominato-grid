@@ -77,8 +77,17 @@ body {
     border: 2px solid black;
     width: calc(100% / 10);
     aspect-ratio: 1/1;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    font-size: 25px;
 }
 
 .none {
     display: none;
+}
+
+.indexNumber {
+    margin-left: auto;
+    margin-right: auto;
 }
