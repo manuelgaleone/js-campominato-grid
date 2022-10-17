@@ -22,6 +22,12 @@ body {
 }
 
 /*Main Section*/
+.container {
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .header {
     margin-left: auto;
     margin-right: auto;
@@ -45,4 +51,11 @@ body {
     color: black;
     text-decoration: underline;
     transition: 0.3s;
+}
+
+.square {
+    border: 2px solid black;
+    width: calc(100% / 8);
+    height: 200px;
+    aspect-ratio: 1/1;
 }
