@@ -15,20 +15,21 @@ let startButton = document.getElementById("startButton");
 let container = document.querySelector(".container");
 
 //Creo i quadratini
+let maxSquare = 100; 
 let square = `<div class="square"></div>`
 
 startButton.addEventListener("click", function() {
     
-    squareGenerator();
+    squareGenerator(maxSquare, container);
     
 });
 
 //Creo la funzione che mi genera i quadratini nella DOM
 function squareGenerator (maxSquare, squarePlace) {
 
-    for (let i = 0; i < maxSquare.length; i++) {
+    for (let i = 0; i < maxSquare; i++) {
 
-        container.innerHTML += square;
+        squarePlace.innerHTML += square;
 
     }
 
