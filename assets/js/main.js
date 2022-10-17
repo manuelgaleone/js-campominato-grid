@@ -37,13 +37,9 @@ function squareGenerator (maxSquare, squarePlace) {
 }
 
 //Creo la funzione di click
-let squareEl = document.getElementById("squareDiv");
+document.getElementById("squareDiv").addEventListener("click", function() {
 
-squareEl.addEventListener("click", function() {
-
-
-    document.getElementById("squareDiv").classList.add("squareActive");
-    document.getElementById("squareDiv").classList.remove("square");
+    document.getElementById("squareDiv").style.color = "green";
 
 }); 
 

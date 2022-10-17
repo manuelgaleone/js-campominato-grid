@@ -92,13 +92,6 @@ body {
     margin-right: auto;
 }
 
-.squareActive {
-    border: 2px solid rgb(255, 255, 255);
-    width: calc(100% / 10);
-    aspect-ratio: 1/1;
-    display: flex;
-    margin: auto;
-    align-items: center;
-    font-size: 25px;
+.square .active {
     background-color: rgb(57, 135, 69);
 }
