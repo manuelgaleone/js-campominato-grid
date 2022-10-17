@@ -17,6 +17,7 @@ let container = document.querySelector(".container");
 
 //Creo i quadratini
 let maxSquare = 100; 
+miaFunzione(maxSquare);
 
 startButton.addEventListener("click", function() {
     
@@ -31,28 +32,41 @@ function squareGenerator (maxSquare, squarePlace) {
         
         let square = `<div id="squareDiv" class="square"><span class="indexNumber">${i}</span></div>`;
         squarePlace.innerHTML += square;
-
+        
+        
     }
+
+    document.querySelectorAll(".square").addEventListener("click", function() {
+        
+        document.querySelectorAll(".square").style.color = "green";
+        
+    }); 
 
 }
 
 //Creo la funzione di click
-document.getElementById("squareDiv").addEventListener("click", function() {
 
-    document.getElementById("squareDiv").style.color = "green";
-
-}); 
 
 //Elimino i quadratini
 annullaButton.addEventListener("click", function() {
-    
-    squareRemover();
+
+    squareRemover(container);
     
 });
 
 //Creo la funzione di reset DOM
-function squareRemover () {
+function squareRemover(squarePlace) {
 
-    squareEl.classList.add("none");
+    squarePlace.classList.add("none");
 
+}
+
+function miaFunzione(squareNumber) {
+    //
+
+    squareNumber = 50;
+
+    //
+
+    return 
 }
