@@ -12,15 +12,24 @@ L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 
 //Seleziono il bottone dalla DOM
 let startButton = document.getElementById("startButton");
+let annullaButton = document.querySelector(".annullaButton");
 let container = document.querySelector(".container");
 
 //Creo i quadratini
 let maxSquare = 100; 
-let square = `<div class="square"></div>`
+let square = `<div id="squareDiv" class="square"></div>`;
+let squareDiv = document.querySelector(".square");
 
 startButton.addEventListener("click", function() {
     
     squareGenerator(maxSquare, container);
+    
+});
+
+//Elimino i quadratini
+annullaButton.addEventListener("click", function() {
+    
+    squareRemover();
     
 });
 
@@ -31,6 +40,13 @@ function squareGenerator (maxSquare, squarePlace) {
 
         squarePlace.innerHTML += square;
 
-    }
+    };
+
+};
+
+//Creo la funzione di reset DOM
+function squareRemover () {
+
+    squareDiv.classList.add("none");
 
 };
