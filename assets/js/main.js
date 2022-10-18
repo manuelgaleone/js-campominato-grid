@@ -12,12 +12,11 @@ L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 
 //Seleziono il bottone dalla DOM
 let startButton = document.getElementById("startButton");
-let annullaButton = document.querySelector(".annullaButton");
+//let annullaButton = document.querySelector(".annullaButton");
 let container = document.querySelector(".container");
 
 //Creo i quadratini
 let maxSquare = 100; 
-miaFunzione(maxSquare);
 
 startButton.addEventListener("click", function() {
     
@@ -29,28 +28,30 @@ startButton.addEventListener("click", function() {
 function squareGenerator (maxSquare, squarePlace) {
     
     for (let i = 1; i < maxSquare + 1; i++) {
-        
+
         let square = `<div id="squareDiv" class="square"><span class="indexNumber">${i}</span></div>`;
         squarePlace.innerHTML += square;
         
     }
     
-    document.querySelector(".square").addEventListener("click", function() {
-
-        console.log("click")
-        //document.querySelector(".square").classList.add("active");
-        //document.getElementById("squareDiv").classList.add("active");
-        //square.classList.add("active");
-        
-
-    });
-
-
 }
 
-//Elimino i quadratini
-annullaButton.addEventListener("click", function() {
+//Creo la funzione di Click
+let squareClick = square;
+    
+for (let i = 0; i < squareClick.length; i++) {
 
+    let squareList = i;
+    
+    square.addEventListener('click', function () {
+        this.classList.add('active');
+
+    })
+}
+
+/* //Elimino i quadratini
+annullaButton.addEventListener("click", function() {
+    
     squareRemover(container);
     
 });
@@ -60,14 +61,4 @@ function squareRemover(squarePlace) {
 
     squarePlace.classList.add("none");
 
-}
-
-function miaFunzione(squareNumber) {
-    //
-
-    squareNumber = 50;
-
-    //
-
-    return 
-}
+} */
