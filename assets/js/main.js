@@ -10,6 +10,62 @@ L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 
 */
 
+//Seleziono gli elementi dalla DOM
+let startButton = document.querySelector('.startButton');
+
+let gridElement = document.querySelector('.grid');
+
+let grid_level = 100;
+
+let cells = Math.sqrt(grid_level);
+
+//Genero la Griglia
+generazioneGriglia(startButton, gridElement, grid_level, cells);
+
+//Funzione di generazione
+function generazioneGriglia(trigEl, wrapEl, max, per_row) {
+
+    //Aggiungo click del pulsante
+    trigEl.addEventListener('click', function () {
+
+    //Reset griglia
+    wrapEl.innerHTML = ''
+
+    //Ciclo di ripetizione
+    for (let i = 1; i <= max; i++) {
+
+    let markupEl = generazioneCelle(i, per_row, 'div', 'cell')
+      
+    wrapEl.insertAdjacentElement('beforeend', markupEl)
+
+    markupEl.addEventListener('click', function () {
+        
+    //Cambio colore - classe
+    this.classList.toggle('active')
+        
+    //Numero interno alla cella
+    console.log(this.innerText);
+
+    })
+   }
+ })
+}
+
+//Funzione di generazione celle
+function generazioneCelle(number, cells, tag, classe) {
+  
+  let markupEl = document.createElement(tag)
+  markupEl.className = classe
+  markupEl.innerText = number
+
+  // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
+  markupEl.style.width = `calc(100% / ${cells})`
+
+  return markupEl
+}
+
+/*
+
 //Seleziono il bottone dalla DOM
 let startButton = document.getElementById("startButton");
 //let annullaButton = document.querySelector(".annullaButton");
@@ -25,7 +81,7 @@ startButton.addEventListener("click", function() {
 });
 
 //Creo la funzione che mi genera i quadratini nella DOM
-function squareGenerator (maxSquare, squarePlace) {
+function squareGenerator(maxSquare, squarePlace) {
     
     for (let i = 1; i < maxSquare + 1; i++) {
 
@@ -37,18 +93,8 @@ function squareGenerator (maxSquare, squarePlace) {
 }
 
 //Creo la funzione di Click
-let squareClick = square;
-    
-for (let i = 0; i < squareClick.length; i++) {
-
-    let squareList = i;
-    
-    square.addEventListener('click', function () {
-        this.classList.add('active');
-
-    })
-}
-
+let squareList = document.querySelectorAll("square");
+console.log(squareList[1])
 /* //Elimino i quadratini
 annullaButton.addEventListener("click", function() {
     
@@ -61,4 +107,6 @@ function squareRemover(squarePlace) {
 
     squarePlace.classList.add("none");
 
-} */
+} 
+
+*/
