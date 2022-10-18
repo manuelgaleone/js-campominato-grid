@@ -33,19 +33,20 @@ function squareGenerator (maxSquare, squarePlace) {
         let square = `<div id="squareDiv" class="square"><span class="indexNumber">${i}</span></div>`;
         squarePlace.innerHTML += square;
         
-        
     }
+    
+    document.querySelector(".square").addEventListener("click", function() {
 
-    document.querySelectorAll(".square").addEventListener("click", function() {
+        console.log("click")
+        //document.querySelector(".square").classList.add("active");
+        //document.getElementById("squareDiv").classList.add("active");
+        //square.classList.add("active");
         
-        document.querySelectorAll(".square").style.color = "green";
-        
-    }); 
+
+    });
+
 
 }
-
-//Creo la funzione di click
-
 
 //Elimino i quadratini
 annullaButton.addEventListener("click", function() {

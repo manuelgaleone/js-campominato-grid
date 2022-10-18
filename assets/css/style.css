@@ -92,6 +92,6 @@ body {
     margin-right: auto;
 }
 
-.square .active {
-    background-color: rgb(57, 135, 69);
+.active {
+    background-color: #398745;
 }
